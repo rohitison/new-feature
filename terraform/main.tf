@@ -24,3 +24,15 @@ resource "null_resource" "kind_cluster" {
     command = "kind delete cluster --name '${self.triggers.cluster_name}'"
   }
 }
+
+esource "null_resource" "kubernetes_app" {
+  depends_on = [null_resource.kind_cluster]
+
+  triggers = {
+    manifest = filesha256("../k8s/nginx.yaml")
+  }
+
+  provisioner "local-exec" {
+    command = "kubectl apply -f ../k8s/nginx.yaml"
+  }
+}
