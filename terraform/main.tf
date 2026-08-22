@@ -25,7 +25,7 @@ resource "null_resource" "kind_cluster" {
   }
 }
 
-esource "null_resource" "kubernetes_app" {
+resource "null_resource" "kubernetes_app" {
   depends_on = [null_resource.kind_cluster]
 
   triggers = {
