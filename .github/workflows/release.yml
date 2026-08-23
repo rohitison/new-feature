@@ -11,7 +11,7 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/devops-interview-app
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   release:
