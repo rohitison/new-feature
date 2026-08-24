@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: devops-interview-app:1.0.0
+          image: ghcr.io/rohitison/new-feature:1.0.4
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
